@@ -1,7 +1,45 @@
 import 'package:flutter/material.dart';
 
 void main() {
+  /*runApp(MaterialApp(
+    title: 'Introduction',
+    home: tutoriaHome(),
+  ));*/
   runApp(MyApp());
+
+}
+
+class tutoriaHome extends StatelessWidget {
+   @override
+  Widget build(BuildContext context) {
+    // Scaffold es un layout para la mayoría de los Material Components.
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null,
+        ),
+        title: Text('Título de ejemplo'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            tooltip: 'Search',
+            onPressed: null,
+          ),
+        ],
+      ),
+      // el body es la mayor parte de la pantalla.
+      body: Center(
+        child: Text('Hello, world!'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add', // utilizado por las tecnologías de accesibilidad para discapacitados
+        child: Icon(Icons.add),
+        onPressed: null,
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -11,19 +49,44 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+      home: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          tooltip: 'Menu Navegador',
+          onPressed: null,      
+          color: Colors.white24,    
+          ),
+          title:  Text("Share"),
+          backgroundColor: Colors.blue[500],
+        ) ,
+        body: Stack(
+          children: [
+             Container(
+                decoration: new BoxDecoration(
+                  border: Border.all(width: 5, color: Colors.black38),
+                  borderRadius: const BorderRadius.all(const Radius.circular(8)),
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage('images/fondo.jpg'),
+                  )
+                ),
+              
+            ),
+            Center(
+              child: Container(
+                alignment: Alignment.center,
+                height: 50,
+                decoration: BoxDecoration(color: Colors.black.withOpacity(0.5)),
+                child: Text("Proyecto Triqui", style: TextStyle(color:Colors.white,fontSize: 40,fontFamily: 'Times New Roma'),),
+              ),
+            )
+          ]
+          ),
+        ),
+      );//MyHomePage(title: 'Flutter Demo Home Page'),
   }
 }
 
