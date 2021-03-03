@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:triquiapp/descripcion_platzi.dart';
 
 void main() {
-  /*runApp(MaterialApp(
+  runApp(MaterialApp(
     title: 'Introduction',
     home: tutoriaHome(),
+  ));
+  //runApp(MyApp());
+ /* runApp(MaterialApp(
+    home: DescripcionPlatzi(),
   ));*/
-  runApp(MyApp());
 
 }
 
@@ -30,9 +34,7 @@ class tutoriaHome extends StatelessWidget {
         ],
       ),
       // el body es la mayor parte de la pantalla.
-      body: Center(
-        child: Text('Hello, world!'),
-      ),
+      body: new DescripcionPlatzi(),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add', // utilizado por las tecnologías de accesibilidad para discapacitados
         child: Icon(Icons.add),
