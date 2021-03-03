@@ -7,10 +7,6 @@ void main() {
     home: tutoriaHome(),
   ));
   //runApp(MyApp());
- /* runApp(MaterialApp(
-    home: DescripcionPlatzi(),
-  ));*/
-
 }
 
 class tutoriaHome extends StatelessWidget {
